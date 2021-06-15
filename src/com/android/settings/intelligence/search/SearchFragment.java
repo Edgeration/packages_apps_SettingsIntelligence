@@ -50,6 +50,8 @@ import com.android.settings.intelligence.search.savedqueries.SavedQueryViewHolde
 
 import java.util.List;
 
+import org.edgeration.sdk.widget.SearchBox;
+
 /**
  * This fragment manages the lifecycle of indexing and searching.
  *
@@ -88,6 +90,9 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     SearchView mSearchView;
     @VisibleForTesting
     LinearLayout mNoResultsView;
+
+    @VisibleForTesting
+    SearchBox mSearchBox;
 
     @VisibleForTesting
     final RecyclerView.OnScrollListener mScrollListener = new RecyclerView.OnScrollListener() {
@@ -149,7 +154,9 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
         mNoResultsView = view.findViewById(R.id.no_results_layout);
 
-        final Toolbar toolbar = view.findViewById(R.id.search_toolbar);
+        mSearchBox = view.findViewById(R.id.edge_searchbox);
+
+        final Toolbar toolbar = mSearchBox.getToolbar();
         activity.setActionBar(toolbar);
         activity.getActionBar().setDisplayHomeAsUpEnabled(true);
 

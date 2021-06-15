@@ -27,30 +27,16 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/colorPrimary"
         android:elevation="4dp">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/search_bar_margin"
-            app:cardCornerRadius="@*android:dimen/config_dialogCornerRadius"
-            app:cardElevation="3dp">
-            <Toolbar
-                android:id="@+id/search_toolbar"
+
+        <org.edgeration.sdk.widget.SearchBox
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/search_bar_height"
-                android:background="?android:attr/selectableItemBackground"
-                android:contentInsetStart="0dp"
-                android:contentInsetStartWithNavigation="0dp"
-                android:theme="?android:attr/actionBarTheme">
-                <SearchView
-                    android:id="@+id/search_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:iconifiedByDefault="false"
-                    android:imeOptions="actionSearch|flagNoExtractUi"
-                    android:searchIcon="@null"/>
-            </Toolbar>
-        </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:id="@+id/edge_searchbox"/>
+        
     </FrameLayout>
 
     <FrameLayout
